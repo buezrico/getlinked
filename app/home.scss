@@ -1,7 +1,7 @@
 @import "./variables";
 
 .home {
-  min-height: 100vh;
+  //   min-height: 100vh;
 
   &-inner {
     .hero {
@@ -15,6 +15,7 @@
         justify-content: flex-end;
         width: 85%;
         margin-bottom: 2rem;
+        z-index: 2;
 
         .hero-intro-wrapper {
           @include column;
@@ -33,7 +34,7 @@
 
       &-content {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         @include center;
 
         &-wrapper {
@@ -45,31 +46,32 @@
 
           .hero-content-text {
             width: 45%;
-            height: 100%;
-
             @include column;
 
             &-wrapper {
-              background: url("../public/assets/images/header_text_bg.png");
+              background: url("../public/assets/images/header_text_bg.png"),
+                $background;
               background-size: contain;
               background-repeat: no-repeat;
               background-blend-mode: hard-light;
               position: absolute;
               top: 0;
-              padding-top: 12%;
-              width: 50%;
+              padding-top: 10%;
+              width: 40%;
             }
 
             .bottom-star {
               position: absolute;
-              bottom: -20%;
-              right: 50%;
+              bottom: 10%;
+              right: 30%;
             }
 
             &-title {
+              margin-bottom: 1.5rem;
+              z-index: 2;
               h1 {
                 font-family: "ClashDisplay";
-                font-size: 5rem;
+                font-size: 4.5rem;
                 font-weight: 700;
                 color: $white;
                 line-height: normal;
@@ -93,21 +95,49 @@
             }
 
             p {
+              z-index: 2;
               font-size: 1.25rem;
               font-style: normal;
               font-weight: 500;
               line-height: 166%;
               color: $white;
               margin-bottom: 3rem;
+              height: max-content;
             }
 
             button {
               width: max-content;
+              margin-bottom: 5rem;
+            }
+
+            .countdown {
+              color: $white;
+
+              &-wrapper {
+                display: flex;
+                gap: 2rem;
+
+                .countdown-time {
+                  display: flex;
+                  align-items: baseline;
+                  font-weight: 500;
+
+                  .countdown-number {
+                    font-size: 3.5rem;
+                    line-height: 133%;
+                  }
+
+                  .countdown-prefix {
+                    font-size: 1rem;
+                    line-height: 133%;
+                  }
+                }
+              }
             }
           }
 
           .hero-content-image {
-            width: 45%;
+            width: 50%;
             @include center;
             position: relative;
 
@@ -117,7 +147,9 @@
               left: -10%;
             }
             &-wrapper {
-              background: url("../public/assets/images/vr_guy.png");
+              background: url("../public/assets/images/vr_guy.png"),
+                rgba(21, 14, 40, 0.8);
+              background-blend-mode: luminosity;
               background-size: contain;
               background-repeat: no-repeat;
               display: flex;
@@ -126,6 +158,7 @@
 
               img {
                 animation: rotate 20s infinite linear;
+                // opacity: 0.7;
               }
             }
           }

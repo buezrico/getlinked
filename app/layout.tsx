@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={montsetrrat.className}>
         <div className="layout">
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </body>

@@ -1,6 +1,7 @@
 @import "./variables";
 
 .layout {
+  z-index: 999;
   .nav {
     width: 100%;
     @include center;
@@ -8,9 +9,13 @@
     border-bottom: 2px solid $gray;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 
     &-inner {
-      width: 90%;
+      width: 85%;
       @include between;
 
       .brand {
@@ -28,7 +33,6 @@
       .nav-items {
         @include center;
         gap: 7rem;
-        padding-right: 3rem;
 
         .nav-links {
           @include center;
@@ -56,5 +60,15 @@
         }
       }
     }
+  }
+
+  .nav-with-bg {
+    background: $background;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.7);
+  }
+
+  main {
+    margin-top: 7rem;
   }
 }
