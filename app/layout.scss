@@ -1,0 +1,60 @@
+@import "./variables";
+
+.layout {
+  .nav {
+    width: 100%;
+    @include center;
+    color: $white;
+    border-bottom: 2px solid $gray;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+
+    &-inner {
+      width: 90%;
+      @include between;
+
+      .brand {
+        &-name {
+          font-family: "ClashDisplay";
+          font-size: 2rem;
+          font-weight: 700;
+
+          .linked {
+            color: $primary;
+          }
+        }
+      }
+
+      .nav-items {
+        @include center;
+        gap: 7rem;
+        padding-right: 3rem;
+
+        .nav-links {
+          @include center;
+          gap: 3rem;
+
+          .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+
+            &:hover {
+              background: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+
+          .active-nav-link {
+            background: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

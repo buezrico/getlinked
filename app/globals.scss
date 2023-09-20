@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./_variables.scss";
+@import "./layout.scss";
+@import "./home.scss";
+
+@import "../components/star/star.scss";
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Medium.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Semibold.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Bold.otf");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Light.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../public/assets/fonts/ClashDisplay-Extralight.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: $background;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primary {
+  border-radius: 4px;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 4rem;
+}

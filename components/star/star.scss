@@ -1,0 +1,20 @@
+.star {
+  padding-left: 5rem;
+  margin-bottom: 5rem;
+
+  img {
+    animation: shine 1s infinite ease-in-out;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

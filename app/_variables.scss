@@ -1,0 +1,19 @@
+$background: #150e28;
+$primary: #d434fe;
+$white: #ffffff;
+$gray: #ffffff2e;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}

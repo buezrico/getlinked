@@ -1,0 +1,142 @@
+@import "./variables";
+
+.home {
+  min-height: 100vh;
+
+  &-inner {
+    .hero {
+      width: 100%;
+      @include column;
+      align-items: center;
+
+      &-intro {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        width: 85%;
+        margin-bottom: 2rem;
+
+        .hero-intro-wrapper {
+          @include column;
+          align-items: flex-end;
+          float: right;
+
+          .hero-intro-text {
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: 700;
+            color: $white;
+            text-align: left;
+          }
+        }
+      }
+
+      &-content {
+        width: 100%;
+        height: 100%;
+        @include center;
+
+        &-wrapper {
+          width: 85%;
+          //   padding-left: 5%;
+          display: flex;
+          justify-content: space-between;
+          //   align-items: flex-start;
+
+          .hero-content-text {
+            width: 45%;
+            height: 100%;
+
+            @include column;
+
+            &-wrapper {
+              background: url("../public/assets/images/header_text_bg.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-blend-mode: hard-light;
+              position: absolute;
+              top: 0;
+              padding-top: 12%;
+              width: 50%;
+            }
+
+            .bottom-star {
+              position: absolute;
+              bottom: -20%;
+              right: 50%;
+            }
+
+            &-title {
+              h1 {
+                font-family: "ClashDisplay";
+                font-size: 5rem;
+                font-weight: 700;
+                color: $white;
+                line-height: normal;
+                display: flex;
+                align-items: center;
+
+                .secondary {
+                  color: $primary;
+                }
+
+                .bulb {
+                  position: relative;
+
+                  img {
+                    position: absolute;
+                    top: -40%;
+                    right: -30%;
+                  }
+                }
+              }
+            }
+
+            p {
+              font-size: 1.25rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 166%;
+              color: $white;
+              margin-bottom: 3rem;
+            }
+
+            button {
+              width: max-content;
+            }
+          }
+
+          .hero-content-image {
+            width: 45%;
+            @include center;
+            position: relative;
+
+            .hero-content-image-star {
+              position: absolute;
+              top: 0;
+              left: -10%;
+            }
+            &-wrapper {
+              background: url("../public/assets/images/vr_guy.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              display: flex;
+              justify-content: flex-start;
+              padding: 0 3rem 10rem 0;
+
+              img {
+                animation: rotate 20s infinite linear;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
