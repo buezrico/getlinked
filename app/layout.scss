@@ -72,3 +72,15 @@
     margin-top: 7rem;
   }
 }
+
+@media (max-width: 75em) {
+  .layout {
+    .nav {
+      &-inner {
+        .nav-items {
+          display: none;
+        }
+      }
+    }
+  }
+}

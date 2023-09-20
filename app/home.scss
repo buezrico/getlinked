@@ -1,7 +1,7 @@
 @import "./variables";
 
 .home {
-  //   min-height: 100vh;
+  min-height: 100vh;
 
   &-inner {
     .hero {
@@ -17,7 +17,7 @@
         margin-bottom: 2rem;
         z-index: 2;
 
-        .hero-intro-wrapper {
+        &-wrapper {
           @include column;
           align-items: flex-end;
           float: right;
@@ -34,19 +34,17 @@
 
       &-content {
         width: 100%;
-        // height: 100%;
         @include center;
 
         &-wrapper {
           width: 85%;
-          //   padding-left: 5%;
           display: flex;
           justify-content: space-between;
-          //   align-items: flex-start;
 
           .hero-content-text {
             width: 45%;
             @include column;
+            z-index: 1;
 
             &-wrapper {
               background: url("../public/assets/images/header_text_bg.png"),
@@ -78,6 +76,11 @@
                 display: flex;
                 align-items: center;
 
+                img {
+                  min-height: 4rem;
+                  min-width: 4rem;
+                }
+
                 .secondary {
                   color: $primary;
                 }
@@ -87,8 +90,10 @@
 
                   img {
                     position: absolute;
-                    top: -40%;
-                    right: -30%;
+                    top: -50%;
+                    right: -50%;
+                    min-height: 3rem;
+                    min-width: 3rem;
                   }
                 }
               }
@@ -166,6 +171,215 @@
       }
     }
   }
+}
+
+@media (max-width: 85em) {
+  .home {
+    &-inner {
+      .hero {
+        &-intro {
+          &-wrapper {
+            .hero-intro-text {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        &-content {
+          &-wrapper {
+            .hero-content-text {
+              &-wrapper {
+                .hero-content-text-title {
+                  h1 {
+                    font-size: 3.5rem;
+
+                    img {
+                      min-height: 3rem;
+                      min-width: 3rem;
+                    }
+
+                    .bulb {
+                      img {
+                        min-height: 2.5rem;
+                        min-width: 2.5rem;
+                      }
+                    }
+                  }
+                }
+
+                p {
+                  font-size: 1rem;
+                }
+
+                .countdown {
+                  &_wrapper {
+                    .countdown-time {
+                      .countdown-number {
+                        font-size: 2.5rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 70em) {
+  .home {
+    &-inner {
+      .hero {
+        justify-content: center;
+        &-intro {
+          justify-content: center;
+          &-wrapper {
+            .hero-intro-text {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        &-content {
+          &-wrapper {
+            flex-direction: column;
+            gap: 5rem;
+            .hero-content-text {
+              width: 100%;
+              &-wrapper {
+                position: unset;
+                width: 100%;
+                @include column;
+                align-items: center;
+                padding: 0;
+
+                .star {
+                  padding-left: 0;
+                  margin-bottom: 1rem;
+                }
+
+                .hero-content-text-title {
+                  text-align: center;
+                  @include column;
+                  align-items: center;
+                  h1 {
+                    font-size: 4rem;
+                    text-align: center;
+
+                    img {
+                      height: 3rem;
+                      width: 3rem;
+                    }
+
+                    .bulb {
+                      img {
+                        min-height: 3rem;
+                        min-width: 3rem;
+                      }
+                    }
+                  }
+                }
+
+                p {
+                  font-size: 1.5rem;
+                  width: 70%;
+                  text-align: center;
+                }
+                button {
+                  margin-bottom: 2rem;
+                }
+
+                .countdown {
+                  &-wrapper {
+                    .countdown-time {
+                      .countdown-number {
+                        font-size: 3rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .hero-content-image {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 50em) {
+  .home {
+    &-inner {
+      .hero {
+        &-intro {
+          &-wrapper {
+            .hero-intro-text {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        &-content {
+          &-wrapper {
+            .hero-content-text {
+              &-wrapper {
+                .hero-content-text-title {
+                  h1 {
+                    font-size: 2.5rem;
+
+                    img {
+                      height: 2rem;
+                      width: 2rem;
+                    }
+
+                    .bulb {
+                      img {
+                        min-height: 2rem;
+                        min-width: 2rem;
+                      }
+                    }
+                  }
+                }
+
+                p {
+                  font-size: 1rem;
+                  width: 70%;
+                  text-align: center;
+                }
+                button {
+                  margin-bottom: 2rem;
+                }
+
+                .countdown {
+                  &-wrapper {
+                    .countdown-time {
+                      .countdown-number {
+                        font-size: 2rem;
+                      }
+                      .countdown-prefix {
+                        font-size: 0.8rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .hero-content-image {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 45em) {
 }
 
 @keyframes rotate {
