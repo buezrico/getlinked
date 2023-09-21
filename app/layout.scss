@@ -75,6 +75,137 @@
   main {
     margin-top: 8rem;
   }
+
+  .footer {
+    background: #100b20;
+    color: $white;
+    width: 100%;
+    @include column;
+    align-items: center;
+
+    &-inner {
+      width: 85%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 3rem;
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+
+      .footer-about {
+        display: flex;
+        justify-content: center;
+
+        &-wrapper {
+          .footer-about-brand {
+            font-family: "ClashDisplay";
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+
+            .linked {
+              color: $primary;
+            }
+          }
+
+          .footer-about-info {
+            font-weight: 400;
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+          }
+
+          .footer-about-terms {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .line {
+              height: 1.5rem;
+              width: 5px;
+              background: $primary;
+            }
+          }
+        }
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+
+        &-wrapper {
+          .footer-links-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $primary;
+            margin-bottom: 1rem;
+          }
+
+          ul {
+            @include column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+
+            li {
+              font-size: 0.875rem;
+              font-weight: 500;
+            }
+          }
+
+          .follow-us {
+            display: flex;
+            gap: 1rem;
+
+            p {
+              font-size: 0.875rem;
+              font-weight: 500;
+              color: $primary;
+            }
+
+            .icons {
+              @include center;
+              gap: 1rem;
+            }
+          }
+        }
+      }
+
+      .footer-contact {
+        display: flex;
+        justify-content: center;
+
+        &-wrapper {
+          .footer-contact-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $primary;
+            margin-bottom: 1rem;
+          }
+          ul {
+            @include column;
+            gap: 1rem;
+
+            li {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              p {
+                font-size: 0.875rem;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      margin-bottom: 2rem;
+      p {
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 @media (max-width: 75em) {
@@ -83,6 +214,29 @@
       &-inner {
         .nav-items {
           display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 50em) {
+  .layout {
+    .footer {
+      &-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+@media (max-width: 40em) {
+  .layout {
+    .footer {
+      &-inner {
+        grid-template-columns: repeat(1, 1fr);
+
+        .footer-links,
+        .footer-contact {
+          justify-content: flex-start;
         }
       }
     }

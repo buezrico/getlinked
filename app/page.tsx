@@ -766,14 +766,14 @@ export default function Home() {
 
             <div className="policy-image">
               <div className="policy-image-wrapper">
-                <div className="security">
+                <div className="image">
                   <Image src={security} alt="security" />
                 </div>
-                <div className="guy-on-padlock">
+                <div className="guy-on-padlock image">
                   <Image src={guy_lock} alt="Guy on a padlock" />
                 </div>
 
-                <div className="privacy-title-star3">
+                <div className=" privacy-title-star3">
                   <Star color={"white"} />
                 </div>
               </div>
