@@ -59,7 +59,7 @@ export default function Navbar() {
                 <Link
                   href={link.path}
                   className={`nav-link ${
-                    activePath === link.path ? "active-nav-link" : "  "
+                    activePath === link.path ? "active-nav-link" : ""
                   }`}
                   key={index}
                 >

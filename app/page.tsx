@@ -9,12 +9,18 @@ import underline from "@/public/assets/images/underline.png";
 import big_idea from "@/public/assets/images/big_idea.png";
 import rules from "@/public/assets/images/rules.png";
 import criteria from "@/public/assets/images/criteria.png";
+import question from "@/public/assets/images/question.png";
+import trophy from "@/public/assets/images/trophy.png";
+import gold_medal from "@/public/assets/images/gold_medal.png";
+import bronze_medal from "@/public/assets/images/bronze_medal.png";
+import silver_medal from "@/public/assets/images/silver_medal.png";
+import question_mark from "@/public/assets/images/question_mark.png";
 import arrow from "@/public/assets/images/arrow.png";
 import Timer from "@joseavilasg/react-compound-timer";
 import { Unica_One } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
-import { Bounce, Rotate, Roll, Slide } from "react-awesome-reveal";
+import { Bounce, Rotate, Roll, Slide, Zoom } from "react-awesome-reveal";
 import { Typewriter } from "react-simple-typewriter";
 
 const unica = Unica_One({
@@ -24,6 +30,7 @@ const unica = Unica_One({
 
 export default function Home() {
   const [underlineState, setUnderlineState] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>();
   return (
     <div className="home">
       <div className="home-inner">
@@ -55,7 +62,7 @@ export default function Home() {
                     <Star color={"white"} />
                   </div>
                   <div className="hero-content-text-title">
-                    <Slide duration={2500}>
+                    <Slide duration={1500}>
                       <h1>
                         getlinked Te
                         <span className="bulb">
@@ -64,7 +71,7 @@ export default function Home() {
                         h
                       </h1>
                     </Slide>
-                    <Slide duration={4000}>
+                    <Slide duration={2500}>
                       <h1>
                         Hackathon <span className="secondary"> &nbsp;1.0</span>
                         <span className="chain">
@@ -244,7 +251,7 @@ export default function Home() {
                     </div>
                   </h1>
                 </Slide>
-                <Slide cascade direction="right">
+                <Zoom cascade direction="right">
                   <ul className="criterias">
                     <li>
                       <p>
@@ -291,7 +298,7 @@ export default function Home() {
                       </p>
                     </li>
                   </ul>
-                </Slide>
+                </Zoom>
 
                 <Bounce>
                   <button className="btn-primary">Read More</button>
@@ -300,7 +307,378 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="questions">
+          <div className="questions-inner">
+            <div className="questions-content">
+              <div className="questions-content-wrapper">
+                <Slide direction="right">
+                  <h1 className="questions-content-title">
+                    Frequently Asked <br />{" "}
+                    <span className="secondary">Questions</span>
+                    <div className="questions-content-title-star">
+                      <Star />
+                    </div>
+                  </h1>
+                </Slide>
+                <Slide duration={2000}>
+                  <p className="questions-content-title-desc">
+                    We got answers to the questions that you might want to ask
+                    about getlinked Hackathon 1.0
+                  </p>
+                </Slide>
+                <Zoom direction="left">
+                  <ul className="faqs">
+                    {faqs.map((faq, index) => (
+                      <li
+                        key={index}
+                        className={activeFaq == index ? "active-faq" : ""}
+                        onClick={() => {
+                          setActiveFaq(faq.id === activeFaq ? null : faq.id);
+                        }}
+                      >
+                        <div className="question">
+                          <p>{faq.question}</p>
+                          <div className="plus">
+                            {faq.id === activeFaq ? "-" : "+"}
+                          </div>
+                        </div>
+                        <p className="answer">{faq.answer}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Zoom>
+              </div>
+            </div>
+
+            <div className="questions-image">
+              <div className="questions-image-star">
+                <Star />
+              </div>
+              <div className="question-mark mark1">
+                <Image src={question_mark} alt="question" />
+              </div>{" "}
+              <div className="question-mark mark2">
+                <Image src={question_mark} alt="question" />
+              </div>{" "}
+              <div className="question-mark mark3">
+                <Image src={question_mark} alt="question" />
+              </div>
+              <Bounce>
+                <Image src={question} alt="questions" />
+              </Bounce>
+              <div className="questions-image-star2">
+                <Star color={"white"} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="timeline" id="timeline">
+          <div className="timeline-inner">
+            <div className="timeline-title">
+              <Bounce>
+                <h1>Timeline</h1>
+                <p>
+                  Here is the breakdown of the time we anticipate using for the
+                  upcoming event.
+                </p>
+              </Bounce>
+            </div>
+
+            <div className="timelines">
+              <div className="timeline-wrapper">
+                <div className="timeline-content">
+                  <Slide>
+                    <h1>Hackathon Announcement</h1>
+                    <p>
+                      The getlinked tech hackathon 1.0 is formally announced to
+                      the general public and teams begin to get ready to
+                      register
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>1</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-date">
+                  <Slide direction="right">
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+              </div>
+
+              <div className="timeline-wrapper timeline-wrapper-odd">
+                <div className="timeline-date">
+                  <Slide>
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>2</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-content">
+                  <Slide direction="right">
+                    <h1>Teams Registration begins</h1>
+                    <p>
+                      Interested teams can now show their interest in the
+                      getlinked tech hackathon 1.0 2023 by proceeding to
+                      register
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+              </div>
+
+              <div className="timeline-wrapper">
+                <div className="timeline-content">
+                  <Slide>
+                    <h1>Teams Registration ends</h1>
+                    <p>
+                      Interested Participants are no longer Allowed to register
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>3</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-date">
+                  <Slide direction="right">
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+              </div>
+
+              <div className="timeline-wrapper timeline-wrapper-odd">
+                <div className="timeline-date">
+                  <Slide>
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>4</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-content">
+                  <Slide direction="right">
+                    <h1>Announcement of the accepted teams and ideas</h1>
+                    <p>
+                      All teams whom idea has been accepted into getlinked tech
+                      hackathon 1.0 2023 are formally announced
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+              </div>
+
+              <div className="timeline-wrapper">
+                <div className="timeline-content">
+                  <Slide>
+                    <h1>Getlinked Hackathon 1.0 Offically Begins</h1>
+                    <p>
+                      Accepted teams can now proceed to build their ground
+                      breaking skill driven solutions
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>5</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-date">
+                  <Slide direction="right">
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+              </div>
+
+              <div className="timeline-wrapper timeline-wrapper-odd">
+                <div className="timeline-date">
+                  <Slide>
+                    <h1>November 18, 2023</h1>
+                  </Slide>
+                </div>
+
+                <div className="timeline-seperation">
+                  <div className="line"></div>
+                  <div className="number">
+                    <h1>6</h1>
+                  </div>
+                </div>
+
+                <div className="timeline-content">
+                  <Slide direction="right">
+                    <h1>Demo Day</h1>
+                    <p>
+                      Teams get the opportunity to pitch their projects to
+                      judges. The winner of the hackathon will also be announced
+                      on this day
+                    </p>
+                    <div className="timeline-mobile-date">
+                      <h1>November 18, 2023</h1>
+                    </div>
+                  </Slide>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="prices">
+          <div className="prices-inner">
+            <div className="prices-title-mobile">
+              {/* <Slide direction="right"> */}
+              <Slide direction="right">
+                <h1>
+                  Prices and <br /> <span className="secondary">Rewards</span>
+                </h1>
+                <p>
+                  Highlight of the prizes or rewards for winners and for
+                  participants.
+                </p>
+              </Slide>
+              {/* </Slide> */}
+              <div className="prices-content-title-star">
+                <Star color={"white"} />
+              </div>
+            </div>
+
+            <div className="prices-image">
+              <div className="prices-image-star">
+                <Star />
+              </div>
+              <Bounce>
+                <Image src={trophy} alt="trophy" />
+              </Bounce>
+              <div className="prices-image-star2">
+                <Star />
+              </div>
+            </div>
+
+            <div className="prices-content">
+              <div className="prices-title">
+                {/* <Slide direction="right"> */}
+                <Slide direction="right">
+                  <h1>
+                    Prices and <br /> <span className="secondary">Rewards</span>
+                  </h1>
+                  <p>
+                    Highlight of the prizes or rewards for winners and for
+                    participants.
+                  </p>
+                </Slide>
+                {/* </Slide> */}
+                <div className="prices-content-title-star">
+                  <Star color={"white"} />
+                </div>
+              </div>
+
+              <div className="prices-trophies">
+                <div className="prices-trophies-wrapper">
+                  <Slide cascade direction="up">
+                    <ul className="trophies">
+                      <li className="trophy first-position">
+                        <Image src={gold_medal} alt="silver medal" />
+                        <h1 className="position">1st</h1>
+                        <h2>Runner</h2>
+                        <h1 className="amount">N400,000</h1>
+                      </li>
+                      <li className="trophy second-position">
+                        <Image src={silver_medal} alt="silver medal" />
+                        <h1 className="position">2nd</h1>
+                        <h2>Runner</h2>
+                        <h1 className="amount">N300,000</h1>
+                      </li>
+
+                      <li className="trophy third-position">
+                        <Image src={bronze_medal} alt="silver medal" />
+                        <h1 className="position">3rd</h1>
+                        <h2>Runner</h2>
+                        <h1 className="amount">N150,000</h1>
+                      </li>
+                    </ul>
+                  </Slide>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
+
+const faqs = [
+  {
+    id: 0,
+    question: "Can I work on a project I started before the hackathon?",
+    answer:
+      "aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+  },
+  {
+    id: 1,
+    question: "What happens if I need help during the hackathon?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+  },
+  {
+    id: 2,
+    question: "What happens if I don't have an idea for a project?",
+    answer:
+      "Lorem  consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+  },
+  {
+    id: 3,
+    question: "Can I join a team or do I have to come with one?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati ipsa. Provident totam aspernatur eaque illum",
+  },
+  {
+    id: 4,
+    question: "What happens after the hackathon ends",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati ",
+  },
+  {
+    id: 5,
+    question: "Can I work on a project I started before the hackathon?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+  },
+];
