@@ -1,21 +1,6 @@
 "use client";
 
 import Star from "@/components/star/Star";
-import bulb from "@/public/assets/images/bulb.png";
-import chain from "@/public/assets/images/chain.png";
-import fire from "@/public/assets/images/fire.png";
-import globe from "@/public/assets/images/globe.png";
-import underline from "@/public/assets/images/underline.png";
-import big_idea from "@/public/assets/images/big_idea.png";
-import rules from "@/public/assets/images/rules.png";
-import criteria from "@/public/assets/images/criteria.png";
-import question from "@/public/assets/images/question.png";
-import trophy from "@/public/assets/images/trophy.png";
-import gold_medal from "@/public/assets/images/gold_medal.png";
-import bronze_medal from "@/public/assets/images/bronze_medal.png";
-import silver_medal from "@/public/assets/images/silver_medal.png";
-import question_mark from "@/public/assets/images/question_mark.png";
-import arrow from "@/public/assets/images/arrow.png";
 import Timer from "@joseavilasg/react-compound-timer";
 import { Unica_One } from "next/font/google";
 import Image from "next/image";
@@ -639,10 +624,108 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="partners" id="partners">
+          <div className=" partners-inner">
+            <div className=" partners-title">
+              <Slide direction="right">
+                <h1>Partners and Sponsors</h1>
+                <p>
+                  Here is the breakdown of the time we anticipate using for the
+                  upcoming event.
+                </p>
+              </Slide>
+            </div>
+
+            <div className="partners-list">
+              <div className=" partners-list-wrapper">
+                <div className="partner-group">
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner1} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                  <div className="seperation-line">
+                    <div className="line"></div>B
+                  </div>
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner2} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                </div>
+
+                <div className="middle-line">
+                  <div className="line"></div>
+                  <div className="line"></div>
+                </div>
+
+                <div className="partner-group">
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner3} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                  <div className="seperation-line">
+                    <div className="line"></div>
+                  </div>
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner4} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                </div>
+
+                <div className="middle-line">
+                  <div className="line"></div>
+                  <div className="line"></div>
+                </div>
+
+                <div className="partner-group">
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner5} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                  <div className="seperation-line">
+                    <div className="line"></div>
+                  </div>
+                  <div className="partner-image">
+                    <Bounce>
+                      <Image src={partner6} alt="partner logo" />
+                    </Bounce>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
+
+import bulb from "@/public/assets/images/bulb.png";
+import chain from "@/public/assets/images/chain.png";
+import fire from "@/public/assets/images/fire.png";
+import globe from "@/public/assets/images/globe.png";
+import underline from "@/public/assets/images/underline.png";
+import big_idea from "@/public/assets/images/big_idea.png";
+import rules from "@/public/assets/images/rules.png";
+import criteria from "@/public/assets/images/criteria.png";
+import question from "@/public/assets/images/question.png";
+import trophy from "@/public/assets/images/trophy.png";
+import gold_medal from "@/public/assets/images/gold_medal.png";
+import bronze_medal from "@/public/assets/images/bronze_medal.png";
+import silver_medal from "@/public/assets/images/silver_medal.png";
+import question_mark from "@/public/assets/images/question_mark.png";
+import partner1 from "@/public/assets/images/partner1.png";
+import partner2 from "@/public/assets/images/partner2.png";
+import partner3 from "@/public/assets/images/partner3.png";
+import partner4 from "@/public/assets/images/partner4.png";
+import partner5 from "@/public/assets/images/partner5.png";
+import partner6 from "@/public/assets/images/partner6.png";
+import arrow from "@/public/assets/images/arrow.png";
 
 const faqs = [
   {

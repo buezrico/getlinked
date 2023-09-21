@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 const montsetrrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "getlinked",
+  title: "GetLinked",
   description: "Igniting a Revolution in HR Innovation",
 };
 

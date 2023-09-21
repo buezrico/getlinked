@@ -558,7 +558,7 @@
 
       &-inner {
         width: 85%;
-        padding: 3rem 0;
+        padding: 5rem 0;
         @include column;
         align-items: center;
 
@@ -675,10 +675,11 @@
       @include center;
       border-bottom: 1px solid $gray;
       border-top: 1px solid $gray;
+      overflow: hidden;
 
       &-inner {
         width: 85%;
-        padding: 3rem 0;
+        padding: 5rem 0;
         background: url("../public/assets/images/header_text_bg.png"),
           $background;
         background-size: contain;
@@ -812,6 +813,94 @@
             position: absolute;
             bottom: 0;
             left: 0;
+          }
+        }
+      }
+    }
+
+    .partners {
+      width: 100%;
+      @include center;
+      background: #150e28;
+
+      &-inner {
+        width: 85%;
+        padding: 5rem 0;
+        @include column;
+        align-items: center;
+
+        .partners-title {
+          @include column;
+          text-align: center;
+          width: 40%;
+          margin-bottom: 5rem;
+
+          h1 {
+            color: $white;
+            font-weight: 700;
+            font-family: "ClashDisplay";
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            color: $white;
+            font-weight: 0.875rem;
+            font-weight: 500;
+          }
+        }
+
+        .partners-list {
+          &-wrapper {
+            @include center;
+            gap: 2rem;
+            border-radius: 5px;
+            border: 1px solid #d434fe;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 6rem;
+
+            .partner-group {
+              height: 15rem;
+              width: 100%;
+              @include column;
+              align-items: center;
+              justify-content: center;
+
+              .partner-image {
+                height: 45%;
+                @include center;
+
+                img {
+                  max-width: 70%;
+                  height: auto;
+                }
+              }
+
+              .seperation-line {
+                height: 10%;
+                width: 100%;
+                @include center;
+
+                .line {
+                  background: $primary;
+                  height: 4px;
+                  width: 80%;
+                }
+              }
+            }
+
+            .middle-line {
+              height: 100%;
+              @include column;
+              justify-content: space-between;
+              gap: 3rem;
+
+              .line {
+                height: 7rem;
+                background: $primary;
+                width: 4px;
+              }
+            }
           }
         }
       }
@@ -1223,6 +1312,11 @@
 
       .prices {
         &-inner {
+          .prices-title-mobile {
+            h1 {
+              font-size: 1.5rem;
+            }
+          }
           .prices-content {
             .prices-trophies {
               &-wrapper {
@@ -1253,6 +1347,67 @@
                       top: -50%;
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .partners {
+        &-inner {
+          width: 85%;
+
+          .partners-title {
+            width: 70%;
+
+            h1 {
+              font-size: 1.5rem;
+            }
+
+            p {
+              font-weight: 0.875rem;
+            }
+          }
+
+          .partners-list {
+            &-wrapper {
+              @include center;
+              gap: 2rem;
+              padding: 2rem;
+
+              .partner-group {
+                height: 15rem;
+                width: 100%;
+
+                .partner-image {
+                  height: 45%;
+                  @include center;
+
+                  img {
+                    max-width: 100%;
+                    height: auto;
+                  }
+                }
+
+                .seperation-line {
+                  height: 10%;
+                  width: 100%;
+                  @include center;
+
+                  .line {
+                    background: $primary;
+                    height: 4px;
+                    width: 80%;
+                  }
+                }
+              }
+
+              .middle-line {
+                height: 100%;
+
+                .line {
+                  height: 4rem;
                 }
               }
             }
@@ -1304,6 +1459,18 @@
                     }
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+
+      .partners {
+        &-inner {
+          .partners-list {
+            &-wrapper {
+              .partner-group {
+                height: 10rem;
               }
             }
           }
