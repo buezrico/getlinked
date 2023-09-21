@@ -558,7 +558,6 @@ export default function Home() {
                   participants.
                 </p>
               </Slide>
-              {/* </Slide> */}
               <div className="prices-content-title-star">
                 <Star color={"white"} />
               </div>
@@ -700,6 +699,87 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="privacy">
+          <div className="privacy-inner">
+            <div className="privacy-content">
+              <div className="privacy-title">
+                <div className="privacy-title-star">
+                  <Star color={"white"} />
+                </div>
+                <Slide>
+                  <h1>
+                    Privacy Policy <br />{" "}
+                    <span className="secondary">and Terms</span>
+                  </h1>
+                  <p className="date-updated">
+                    Last updated on September 12, 2023
+                  </p>
+                  <p className="privacy-title-desc">
+                    Highlight of the prizes or rewards for winners and for
+                    participants.
+                  </p>
+                </Slide>
+                <div className="privacy-title-star">
+                  <Star color={"white"} />
+                </div>
+              </div>
+
+              <div className="privacy-policy">
+                <p className="privacy-policy-desc">
+                  At getlinked tech Hackathon 1.0, we value your privacy and are
+                  committed to protecting your personal information. This
+                  Privacy Policy outlines how we collect, use, disclose, and
+                  safeguard your data when you participate in our tech hackathon
+                  event. By participating in our event, you consent to the
+                  practices described in this policy.
+                </p>
+                <p className="privacy-policy-title">
+                  Licensing Policy <br />
+                </p>
+                <p className="privacy-policy-title-desc">
+                  Here are terms of our Standard License:
+                </p>
+
+                <ul className="policies">
+                  <li className="policy">
+                    <Image src={check} alt="check icon" />
+                    <p className="policy-text">
+                      The Standard License grants you a non-exclusive right to
+                      navigate and register for our event
+                    </p>
+                  </li>
+                  <li className="policy">
+                    <Image src={check} alt="check icon" />
+                    <p className="policy-text">
+                      You are licensed to use the item available at any free
+                      source sites, for your project developement
+                    </p>
+                  </li>
+                </ul>
+
+                <div className="policy-button">
+                  <button className="btn-primary">Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <div className="policy-image">
+              <div className="policy-image-wrapper">
+                <div className="security">
+                  <Image src={security} alt="security" />
+                </div>
+                <div className="guy-on-padlock">
+                  <Image src={guy_lock} alt="Guy on a padlock" />
+                </div>
+
+                <div className="privacy-title-star3">
+                  <Star color={"white"} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -719,6 +799,8 @@ import gold_medal from "@/public/assets/images/gold_medal.png";
 import bronze_medal from "@/public/assets/images/bronze_medal.png";
 import silver_medal from "@/public/assets/images/silver_medal.png";
 import question_mark from "@/public/assets/images/question_mark.png";
+import guy_lock from "@/public/assets/images/guy_lock.png";
+import security from "@/public/assets/images/security.png";
 import partner1 from "@/public/assets/images/partner1.png";
 import partner2 from "@/public/assets/images/partner2.png";
 import partner3 from "@/public/assets/images/partner3.png";
@@ -726,6 +808,7 @@ import partner4 from "@/public/assets/images/partner4.png";
 import partner5 from "@/public/assets/images/partner5.png";
 import partner6 from "@/public/assets/images/partner6.png";
 import arrow from "@/public/assets/images/arrow.png";
+import check from "@/public/assets/images/check.png";
 
 const faqs = [
   {

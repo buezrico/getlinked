@@ -49,7 +49,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className={`nav ${navBg ? "nav-with-bg" : ""} `}>
+    <nav className={`nav ${navBg ? "nav-with-bg" : ""} `}>
       <div className="nav-inner">
         <div className="brand">
           <Link href="/" onClick={() => setActiveHash("/")}>
@@ -84,6 +84,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
