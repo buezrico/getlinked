@@ -49,6 +49,7 @@
 body {
   background: $background;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     margin-top: 1rem;

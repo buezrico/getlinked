@@ -1,32 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import { usePathname } from "next/navigation";
-import { Bounce, Fade, Slide } from "react-awesome-reveal";
+import React, { useEffect, useState } from "react";
+// import { Bounce, Fade, Slide } from "react-awesome-reveal";
 
 const navLinks = [
   {
     label: "Timeline",
-    path: "/timeline",
+    path: "#timeline",
   },
   {
     label: "Overview",
-    path: "/overview",
+    path: "#overview",
   },
   {
     label: "FAQs",
-    path: "/faqs",
+    path: "#faqs",
   },
   {
     label: "Contact",
-    path: "/contact",
+    path: "#contact",
   },
 ];
 
 export default function Navbar() {
   const [navBg, setNavBg] = useState(false);
-  const activePath = usePathname();
+  const [activeHash, setActiveHash] = useState<string>();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "") {
+      setActiveHash("/");
+    }
+    setActiveHash(hash);
+  }, []);
 
   const toggleMenu = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -45,7 +52,7 @@ export default function Navbar() {
     <div className={`nav ${navBg ? "nav-with-bg" : ""} `}>
       <div className="nav-inner">
         <div className="brand">
-          <Link href="/">
+          <Link href="/" onClick={() => setActiveHash("/")}>
             <p className="brand-name">
               get<span className="linked">linked</span>
             </p>
@@ -53,21 +60,24 @@ export default function Navbar() {
         </div>
 
         <div className="nav-items">
-          <Bounce cascade>
-            <ul className="nav-links">
-              {navLinks.map((link, index): any => (
-                <Link
-                  href={link.path}
-                  className={`nav-link ${
-                    activePath === link.path ? "active-nav-link" : ""
-                  }`}
-                  key={index}
-                >
-                  <li>{link.label}</li>
-                </Link>
-              ))}
-            </ul>
-          </Bounce>
+          {/* <Bounce cascade> */}
+          <ul className="nav-links">
+            {navLinks.map((link, index): any => (
+              <Link
+                href={link.path}
+                className={`nav-link ${
+                  activeHash === link.path ? "active-nav-link" : ""
+                }`}
+                key={index}
+                onClick={() => {
+                  setActiveHash(link.path);
+                }}
+              >
+                <li>{link.label}</li>
+              </Link>
+            ))}
+          </ul>
+          {/* </Bounce> */}
 
           <div className="nav-contact-btn">
             <button className="btn-primary">Register</button>

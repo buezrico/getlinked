@@ -7,8 +7,7 @@
     @include center;
     color: $white;
     border-bottom: 1px solid $gray;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -42,6 +41,7 @@
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
+            transition: all 0.5s linear;
 
             &:hover {
               background: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
@@ -52,10 +52,14 @@
           }
 
           .active-nav-link {
-            background: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(
+              90deg,
+              #903aff 3.08%,
+              #ff26b9 93.85%
+            ) !important;
+            background-clip: text !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
           }
         }
       }
@@ -69,7 +73,7 @@
   }
 
   main {
-    margin-top: 7rem;
+    margin-top: 8rem;
   }
 }
 
