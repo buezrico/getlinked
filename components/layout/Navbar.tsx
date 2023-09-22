@@ -26,6 +26,7 @@ const navLinks = [
 export default function Navbar() {
   const [navBg, setNavBg] = useState(false);
   const [activeHash, setActiveHash] = useState<string>();
+  const [mobileNav, setMobileNav] = useState(false);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -57,6 +58,17 @@ export default function Navbar() {
               get<span className="linked">linked</span>
             </p>
           </Link>
+        </div>
+
+        <div
+          className={`nav-btn ${mobileNav ? "nav-close" : ""}`}
+          onClick={() => setMobileNav(!mobileNav)}
+        >
+          <div className="nav-btn-wrapper">
+            <div className="line line1"></div>
+            <div className="line line2"></div>
+            <div className="line line3"></div>
+          </div>
         </div>
 
         <div className="nav-items">

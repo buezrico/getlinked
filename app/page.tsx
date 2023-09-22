@@ -645,7 +645,7 @@ export default function Home() {
                     </Bounce>
                   </div>
                   <div className="seperation-line">
-                    <div className="line"></div>B
+                    <div className="line"></div>
                   </div>
                   <div className="partner-image">
                     <Bounce>

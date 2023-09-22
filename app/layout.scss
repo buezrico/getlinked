@@ -29,6 +29,65 @@
         }
       }
 
+      .nav-btn {
+        display: none;
+        transition: all 1s linear;
+        &-wrapper {
+          @include column;
+          gap: 4px;
+          cursor: pointer;
+
+          .line {
+            background: $white;
+            width: 25px;
+            height: 4px;
+            border-radius: 4px;
+            transform-origin: 0;
+            transform: rotate(0);
+            transition: all 0.5s ease-in-out;
+          }
+
+          .line1 {
+            width: 12.5px;
+          }
+
+          .line3 {
+            width: 12.5px;
+            align-self: flex-end;
+          }
+        }
+
+        &:hover {
+          .line {
+            background: $primary;
+          }
+        }
+      }
+
+      .nav-close {
+        .nav-btn-wrapper {
+          border-radius: 50%;
+          background: transparent;
+          border: 2px solid linear-gradient(#903aff, #ff26b9);
+
+          .line {
+            width: 25px;
+            // transform-origin: 1px;
+          }
+          .line1 {
+            transform: rotate(45deg);
+          }
+          .line3 {
+            transform: rotate(-45deg);
+          }
+
+          .line2 {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+        }
+      }
+
       .nav-items {
         @include center;
         gap: 7rem;
@@ -212,6 +271,10 @@
   .layout {
     .nav {
       &-inner {
+        .nav-btn {
+          display: flex;
+        }
+
         .nav-items {
           display: none;
         }
@@ -221,6 +284,14 @@
 }
 @media (max-width: 50em) {
   .layout {
+    .nav {
+      &-inner {
+        .nav-items {
+          display: none;
+        }
+      }
+    }
+
     .footer {
       &-inner {
         grid-template-columns: repeat(2, 1fr);
