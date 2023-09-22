@@ -1,7 +1,6 @@
 @import "./variables";
 
 .home {
-  height: 100%;
   margin-bottom: 5rem;
 
   &-inner {
@@ -10,10 +9,12 @@
 
     .hero {
       width: 100%;
+      min-height: calc(100vh - 5rem);
       @include column;
       align-items: center;
       border-bottom: 1px solid $gray;
       padding-top: 0;
+      // justify-content: flex-end;
 
       &-intro {
         padding-top: 2rem;
@@ -62,7 +63,7 @@
               background-blend-mode: hard-light;
               position: absolute;
               top: 0;
-              padding-top: 12%;
+              padding-top: 10%;
               width: 40%;
 
               .star {
@@ -119,14 +120,14 @@
               font-weight: 500;
               line-height: 166%;
               color: $white;
-              margin-bottom: 3rem;
+              margin-bottom: 1.5rem;
               height: max-content;
               height: 5rem;
             }
 
             button {
               width: max-content;
-              margin-bottom: 5rem;
+              margin-bottom: 3rem;
             }
 
             .countdown {
@@ -174,7 +175,7 @@
               background-repeat: no-repeat;
               display: flex;
               justify-content: flex-start;
-              padding: 0 3rem 0 0;
+              // padding: 0 3rem 0 0;
 
               img {
                 animation: rotate 20s infinite linear;
@@ -1285,10 +1286,6 @@
               .image {
                 max-width: 15rem;
                 max-height: 15rem;
-              }
-
-              .guy-on-padlock {
-                // position: unset;
               }
             }
           }

@@ -2,8 +2,13 @@
 
 .layout {
   z-index: 999;
+  min-height: 100vh;
+  @include column;
+  justify-content: space-between;
+
   .nav {
     width: 100%;
+    height: 5rem;
     @include center;
     color: $white;
     border-bottom: 1px solid $gray;
@@ -62,12 +67,6 @@
             .line3 {
               width: 12.5px;
               align-self: flex-end;
-            }
-          }
-
-          &:hover {
-            .line {
-              background: $primary;
             }
           }
         }
@@ -156,7 +155,7 @@
   }
 
   main {
-    margin-top: 8rem;
+    margin-top: 5rem;
   }
 
   .footer {
@@ -313,7 +312,7 @@
           z-index: 1;
           top: 0;
           left: -100%;
-          transition: all 0.5s ease-in-out;
+          transition: all 1s ease-in-out;
           padding: 0 10%;
 
           .nav-links {
@@ -337,17 +336,6 @@
 }
 @media (max-width: 50em) {
   .layout {
-    .nav {
-      &-inner {
-        .nav-btn {
-          &:hover {
-            .line {
-              background: $white;
-            }
-          }
-        }
-      }
-    }
     .footer {
       &-inner {
         grid-template-columns: repeat(2, 1fr);
