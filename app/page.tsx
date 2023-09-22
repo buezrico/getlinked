@@ -82,7 +82,9 @@ export default function Home() {
                   </p>
 
                   <Bounce delay={3000}>
-                    <button className="btn-primary">Register</button>
+                    <button className="btn-primary">
+                      <div className="btn-primary-inner">Register</div>
+                    </button>
                   </Bounce>
 
                   <div className="countdown">
@@ -285,7 +287,9 @@ export default function Home() {
                 </Zoom>
 
                 <Bounce>
-                  <button className="btn-primary">Read More</button>
+                  <button className="btn-primary">
+                    <div className="btn-primary-inner">Read More</div>
+                  </button>
                 </Bounce>
               </div>
             </div>
@@ -341,10 +345,10 @@ export default function Home() {
               </div>
               <div className="question-mark mark1">
                 <Image src={question_mark} alt="question" />
-              </div>{" "}
+              </div>
               <div className="question-mark mark2">
                 <Image src={question_mark} alt="question" />
-              </div>{" "}
+              </div>
               <div className="question-mark mark3">
                 <Image src={question_mark} alt="question" />
               </div>
@@ -547,7 +551,6 @@ export default function Home() {
         <section className="prices">
           <div className="prices-inner">
             <div className="prices-title-mobile">
-              {/* <Slide direction="right"> */}
               <Slide direction="right">
                 <h1>
                   Prices and <br /> <span className="secondary">Rewards</span>
@@ -576,7 +579,6 @@ export default function Home() {
 
             <div className="prices-content">
               <div className="prices-title">
-                {/* <Slide direction="right"> */}
                 <Slide direction="right">
                   <h1>
                     Prices and <br /> <span className="secondary">Rewards</span>
@@ -586,7 +588,6 @@ export default function Home() {
                     participants.
                   </p>
                 </Slide>
-                {/* </Slide> */}
                 <div className="prices-content-title-star">
                   <Star color={"white"} />
                 </div>
@@ -758,7 +759,9 @@ export default function Home() {
                 </ul>
 
                 <div className="policy-button">
-                  <button className="btn-primary">Read More</button>
+                  <button className="btn-primary">
+                    <div className="btn-primary-inner">Read More</div>
+                  </button>
                 </div>
               </div>
             </div>

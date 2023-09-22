@@ -6,6 +6,7 @@
 @import "./layout.scss";
 @import "./home.scss";
 @import "./contact/contact.scss";
+@import "./register/register.scss";
 
 @import "../components/star/star.scss";
 
@@ -82,7 +83,7 @@ p {
 .btn-primary {
   border-radius: 4px;
   background: linear-gradient(
-    270deg,
+    -180deg,
     #903aff 0%,
     #d434fe 56.42%,
     #ff26b9 99.99%,
@@ -92,4 +93,37 @@ p {
   font-size: 1rem;
   font-weight: 500;
   padding: 1rem 4rem;
+
+  &:hover {
+    padding: 2px;
+
+    .btn-primary-inner {
+      background: $background;
+      padding: 0.8rem 3.8rem;
+      transition: background-color 0.3s ease-in-out;
+    }
+  }
+}
+
+.btn-secondary {
+  @extend .btn-primary;
+  padding: 2px;
+
+  &-inner {
+    background: $background;
+    padding: 0.8rem 3.8rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .btn-secondary-inner {
+      background: linear-gradient(
+        -180deg,
+        #903aff 0%,
+        #d434fe 56.42%,
+        #ff26b9 99.99%,
+        #fe34b9 100%
+      );
+    }
+  }
 }

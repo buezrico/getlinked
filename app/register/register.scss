@@ -1,0 +1,206 @@
+@import "../variables";
+
+.register {
+  color: $white;
+  width: 100%;
+  @include column;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  &-inner {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .register-title {
+      width: 100%;
+      &-heading {
+        font-size: 2rem;
+        color: $primary;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .mobile-title {
+      display: none;
+    }
+
+    .register-image {
+      display: flex;
+      align-items: flex-start;
+      width: 35%;
+    }
+
+    .register-form {
+      width: 60%;
+      background: url("../../public/assets/images/header_text_bg.png"),
+        $background;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-blend-mode: hard-light;
+      background-position: right bottom;
+
+      &-wrapper {
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 3rem 6rem;
+        width: 100%;
+
+        .form {
+          @include column;
+          gap: 2rem;
+
+          .register-form-title {
+            @include column;
+            // gap: 0.5rem;
+
+            &-movement {
+              display: flex;
+              align-items: flex-end;
+              gap: 0.5rem;
+              margin-bottom: 1rem;
+
+              .movement-wrapper {
+                display: flex;
+                border-bottom: 2px dashed $primary;
+                width: 7rem;
+
+                img {
+                  animation: walk 5s linear infinite;
+                }
+              }
+            }
+
+            .register-form-semi-title {
+              font-size: 1.5rem;
+              font-weight: 500;
+            }
+          }
+
+          .form-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+
+            .form-group {
+              @include column;
+
+              label {
+                font-size: 0.875rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+              }
+
+              input,
+              select {
+                border: 1px solid $white;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                padding: 1rem;
+                font-size: 0.875rem;
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 0.03);
+                width: 100%;
+
+                option {
+                  color: $background;
+                }
+              }
+            }
+          }
+
+          .terms {
+            .warning {
+              font-size: 0.8rem;
+              font-weight: 500;
+              color: $pink;
+              margin-bottom: 1rem;
+            }
+
+            .condition {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              p {
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: $white;
+              }
+
+              input {
+                background: transparent;
+              }
+            }
+          }
+
+          .register-form-button {
+            width: 100%;
+
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 70em) {
+      flex-direction: column;
+      align-items: center;
+
+      .mobile-title {
+        display: flex;
+      }
+
+      .desktop-title {
+        display: none;
+      }
+
+      .register-image {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .register-form {
+        width: 100%;
+
+        &-wrapper {
+          background: transparent;
+          box-shadow: none;
+        }
+      }
+    }
+    @media (max-width: 50em) {
+      .register-form {
+        width: 100%;
+
+        &-wrapper {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes walk {
+  0% {
+    transform: translateX(0px) rotateY(0);
+  }
+  30% {
+    transform: translateX(4rem) rotateY(0);
+  }
+  50% {
+    transform: translateX(4rem) rotateY(180deg);
+  }
+  80% {
+    transform: translateX(0px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(360deg);
+  }
+}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 // import { Bounce, Fade, Slide } from "react-awesome-reveal";
 
 const navLinks = [
@@ -27,6 +28,8 @@ export default function Navbar() {
   const [navBg, setNavBg] = useState(false);
   const [activeHash, setActiveHash] = useState<string>();
   const [mobileNav, setMobileNav] = useState(false);
+
+  const pathName = usePathname();
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -93,10 +96,19 @@ export default function Navbar() {
             ))}
           </ul>
           {/* </Bounce> */}
-
-          <div className="nav-contact-btn">
-            <button className="btn-primary">Register</button>
-          </div>
+          {pathName === "/register" ? (
+            <Link href="/register" onClick={() => setMobileNav(false)}>
+              <button className="btn-secondary">
+                <div className="btn-secondary-inner">Register</div>
+              </button>
+            </Link>
+          ) : (
+            <Link href="/register" onClick={() => setMobileNav(false)}>
+              <button className="btn-primary">
+                <div className="btn-primary-inner">Register</div>
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

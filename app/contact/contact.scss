@@ -5,7 +5,7 @@
   width: 100%;
   @include column;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 5rem;
 
   .back-btn {
@@ -96,6 +96,7 @@
       p {
         font-size: 1rem;
         font-weight: 500;
+        margin-bottom: 1rem;
       }
 
       &-share {
@@ -153,7 +154,7 @@
             border: 1px solid $white;
             background: transparent;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            padding: 0.5rem;
+            padding: 1rem;
             font-size: 0.875rem;
           }
 
