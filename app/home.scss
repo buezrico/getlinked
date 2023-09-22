@@ -189,6 +189,11 @@
     .big-idea {
       width: 100%;
       @include center;
+      background: url("../public/assets/images/header_text_bg.png"), $background;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-blend-mode: hard-light;
+      background-position: right;
       // border-bottom: 2px solid $gray;
 
       &-inner {
@@ -252,7 +257,7 @@
       width: 100%;
       @include center;
       height: 100%;
-      border-bottom: 1px solid $gray;
+      // border-bottom: 1px solid $gray;
       border-top: 1px solid $gray;
       background: url("../public/assets/images/header_text_bg.png"), $background;
       background-size: contain;
@@ -321,9 +326,13 @@
     .criteria {
       width: 100%;
       @include center;
-      border-bottom: 1px solid $gray;
+      border-top: 1px solid $gray;
 
-      // border-bottom: 2px solid $gray;
+      background: url("../public/assets/images/header_text_bg.png"), $background;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-blend-mode: hard-light;
+      background-position: left;
 
       &-inner {
         padding: 5rem 0;
@@ -405,7 +414,12 @@
     .questions {
       width: 100%;
       @include center;
-      border-bottom: 1px solid $gray;
+      border-top: 1px solid $gray;
+      background: url("../public/assets/images/header_text_bg.png"), $background;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-blend-mode: hard-light;
+      background-position: right;
 
       &-inner {
         padding: 5rem 0;
@@ -824,6 +838,11 @@
       width: 100%;
       @include center;
       background: #150e28;
+      background: url("../public/assets/images/header_text_bg.png"), $background;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-blend-mode: hard-light;
+      background-position: right;
 
       &-inner {
         width: 85%;

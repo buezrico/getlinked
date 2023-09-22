@@ -245,7 +245,12 @@ export default function Home() {
         </div>
       </div>
 
-      {success && <Success />}
+      {success && (
+        <Success
+          message={"You have Succesfully registered"}
+          sub_message={"Check your mail box for the next step"}
+        />
+      )}
     </div>
   );
 }

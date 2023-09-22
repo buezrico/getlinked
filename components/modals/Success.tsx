@@ -5,7 +5,12 @@ import wink_emoji from "@/public/assets/images/wink_emoji.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function Success() {
+interface IMessage {
+  message: string;
+  sub_message: string;
+}
+
+export default function Success({ message, sub_message }: IMessage) {
   const router = useRouter();
   return (
     <div className="success">
@@ -21,13 +26,13 @@ export default function Success() {
           </div>
 
           <h1 className="success-message">Congratulations</h1>
-          <h1 className="success-message">you have successfully registered</h1>
+          <h1 className="success-message">{message}</h1>
           <div className="success-sub-messages">
             <p className="success-sub-message">
               Yes, it was easy and you made it!
             </p>
             <p className="success-sub-message">
-              Check your mail box for next step{" "}
+              {sub_message}
               <Image src={wink_emoji} alt="wink emoji" />
             </p>
           </div>

@@ -180,7 +180,14 @@ export default function Home() {
           </Bounce>
         </div>
       </div>
-      {success && <Success />}
+      {success && (
+        <Success
+          message={"Your Message was sent Successfully"}
+          sub_message={
+            "Our Customer Care Representative will contact you shortly"
+          }
+        />
+      )}
     </div>
   );
 }
