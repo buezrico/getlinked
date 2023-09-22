@@ -6,9 +6,64 @@ import linkedin from "@/public/assets/images/linkedin.png";
 import twitter from "@/public/assets/images/twitter.png";
 import { useRouter } from "next/navigation";
 import { Bounce, Slide } from "react-awesome-reveal";
+import { FormEvent, useState } from "react";
+import Success from "@/components/modals/Success";
+
+interface IForm {
+  first_name: string;
+  email: string;
+  phone_number: string;
+  message: string;
+}
 
 export default function Home() {
+  const [success, setSuccess] = useState(false);
+  const [form, setForm] = useState<IForm>({
+    first_name: "",
+    email: "",
+    phone_number: "",
+    message: "",
+  });
   const router = useRouter();
+
+  const handleChange = (
+    e: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.currentTarget.name]: e.currentTarget.value });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_baseUrl}/hackathon/contact-form`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            first_name: form.first_name,
+            email: form.email,
+            phone_number: form.phone_number,
+            message: form.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSuccess(true);
+        console.log("Working", response);
+      } else {
+        alert("Server Unavailable, Please try again later");
+        console.log("Error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="contact">
       <div className="back-btn" onClick={() => router.back()}>
@@ -73,7 +128,7 @@ export default function Home() {
         <div className="contact-form">
           <Bounce>
             <div className="contact-form-wrapper">
-              <form className="form">
+              <form onSubmit={handleSubmit} className="form">
                 <div className="contact-form-title">
                   <h3 className="contact-form-title-text">
                     Questions or need assistance?
@@ -82,14 +137,38 @@ export default function Home() {
                     Let us know about it!
                   </h3>
                 </div>
-                <input type="text" placeholder="Your Full Name" />
-                <input type="text" placeholder="Your Email Address" />
+                <input
+                  name="first_name"
+                  type="text"
+                  placeholder="Your Full Name"
+                  value={form.first_name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Your Email Address"
+                  value={form.email}
+                  onChange={handleChange}
+                  name="email"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Your Phone Number"
+                  value={form.phone_number}
+                  onChange={handleChange}
+                  name="phone_number"
+                  required
+                />
                 <textarea
-                  name=""
-                  id=""
                   cols={30}
                   rows={5}
                   placeholder="Your Message"
+                  value={form.message}
+                  onChange={handleChange}
+                  name="message"
+                  required
                 ></textarea>
                 <div className="contact-form-button">
                   <button className="btn-primary">
@@ -101,6 +180,7 @@ export default function Home() {
           </Bounce>
         </div>
       </div>
+      {success && <Success />}
     </div>
   );
 }
