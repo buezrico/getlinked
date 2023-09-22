@@ -14,7 +14,6 @@ const unica = Unica_One({
 });
 
 export default function Home() {
-  const [underlineState, setUnderlineState] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>();
   return (
     <div className="home">
@@ -133,7 +132,7 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="big-idea">
+        <section className="big-idea" id="overview">
           <div className="big-idea-inner">
             <div className="big-idea-image">
               <div className="big-idea-image-star">
@@ -293,7 +292,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="questions">
+        <section className="questions" id="faqs">
           <div className="questions-inner">
             <div className="questions-content">
               <div className="questions-content-wrapper">
@@ -821,19 +820,18 @@ const faqs = [
     id: 1,
     question: "What happens if I need help during the hackathon?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati ",
   },
   {
     id: 2,
     question: "What happens if I don't have an idea for a project?",
-    answer:
-      "Lorem  consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+    answer: "Lorem  consectetur adipisicing elit. Eveniet aliquid dolorum ",
   },
   {
     id: 3,
     question: "Can I join a team or do I have to come with one?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati ipsa. Provident totam aspernatur eaque illum",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati ipsa. ",
   },
   {
     id: 4,
@@ -845,6 +843,6 @@ const faqs = [
     id: 5,
     question: "Can I work on a project I started before the hackathon?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum obcaecati recusandae necessitatibus ipsa. Provident totam aspernatur eaque illum",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aliquid dolorum ",
   },
 ];

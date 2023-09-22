@@ -7,19 +7,19 @@ import React, { useEffect, useState } from "react";
 const navLinks = [
   {
     label: "Timeline",
-    path: "#timeline",
+    path: "/#timeline",
   },
   {
     label: "Overview",
-    path: "#overview",
+    path: "/#overview",
   },
   {
     label: "FAQs",
-    path: "#faqs",
+    path: "/#faqs",
   },
   {
     label: "Contact",
-    path: "#contact",
+    path: "/contact",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav className={`nav ${navBg ? "nav-with-bg" : ""} `}>
-      <div className="nav-inner">
+      <div className={`nav-inner ${mobileNav ? "mobile-nav" : ""}`}>
         <div className="brand">
           <Link href="/" onClick={() => setActiveHash("/")}>
             <p className="brand-name">
@@ -65,9 +65,11 @@ export default function Navbar() {
           onClick={() => setMobileNav(!mobileNav)}
         >
           <div className="nav-btn-wrapper">
-            <div className="line line1"></div>
-            <div className="line line2"></div>
-            <div className="line line3"></div>
+            <div className="nav-btn-wrapper-inner">
+              <div className="line line1"></div>
+              <div className="line line2"></div>
+              <div className="line line3"></div>
+            </div>
           </div>
         </div>
 
@@ -83,6 +85,7 @@ export default function Navbar() {
                 key={index}
                 onClick={() => {
                   setActiveHash(link.path);
+                  setMobileNav(false);
                 }}
               >
                 <li>{link.label}</li>

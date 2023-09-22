@@ -31,59 +31,83 @@
 
       .nav-btn {
         display: none;
-        transition: all 1s linear;
+        transition: all 2s linear;
+        cursor: pointer;
         &-wrapper {
-          @include column;
-          gap: 4px;
-          cursor: pointer;
+          @include center;
 
-          .line {
-            background: $white;
-            width: 25px;
-            height: 4px;
-            border-radius: 4px;
-            transform-origin: 0;
-            transform: rotate(0);
-            transition: all 0.5s ease-in-out;
+          &-inner {
+            background: $background;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            @include column;
+            gap: 4px;
+            transition: all 1s ease-in-out;
+
+            .line {
+              background: $white;
+              width: 25px;
+              height: 4px;
+              border-radius: 4px;
+              transform-origin: 0;
+              transform: rotate(0);
+              transition: all 1s ease-in-out;
+            }
+
+            .line1 {
+              width: 12.5px;
+            }
+
+            .line3 {
+              width: 12.5px;
+              align-self: flex-end;
+            }
           }
 
-          .line1 {
-            width: 12.5px;
-          }
-
-          .line3 {
-            width: 12.5px;
-            align-self: flex-end;
-          }
-        }
-
-        &:hover {
-          .line {
-            background: $primary;
+          &:hover {
+            .line {
+              background: $primary;
+            }
           }
         }
       }
 
       .nav-close {
+        transition: all 2s linear;
+
         .nav-btn-wrapper {
           border-radius: 50%;
-          background: transparent;
-          border: 2px solid linear-gradient(#903aff, #ff26b9);
+          background: linear-gradient(#903aff, #ff26b9);
+          padding: 3px;
+          @include center;
+          height: 45px;
+          width: 45px;
 
-          .line {
-            width: 25px;
-            // transform-origin: 1px;
-          }
-          .line1 {
-            transform: rotate(45deg);
-          }
-          .line3 {
-            transform: rotate(-45deg);
-          }
+          &-inner {
+            background: #000;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            @include center;
 
-          .line2 {
-            transform: translateX(-50px);
-            opacity: 0;
+            .line {
+              width: 25px;
+              position: absolute;
+              transform-origin: 50%;
+            }
+            .line1 {
+              transform: rotate(45deg);
+            }
+            .line3 {
+              align-self: center;
+              transform: rotate(-45deg);
+            }
+
+            .line2 {
+              transform: translateX(-50px);
+              opacity: 0;
+            }
           }
         }
       }
@@ -271,12 +295,41 @@
   .layout {
     .nav {
       &-inner {
+        position: relative;
+
         .nav-btn {
           display: flex;
+          transition: all 1s ease-in-out;
+          z-index: 2;
         }
 
         .nav-items {
-          display: none;
+          @include column;
+          align-items: flex-start;
+          position: fixed;
+          background: $background;
+          min-height: 100vh;
+          width: 100%;
+          z-index: 1;
+          top: 0;
+          left: -100%;
+          transition: all 0.5s ease-in-out;
+          padding: 0 10%;
+
+          .nav-links {
+            @include column;
+            align-items: flex-start;
+
+            .nav-link {
+              font-size: 1.5rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .mobile-nav {
+        .nav-items {
+          left: 0;
         }
       }
     }
@@ -286,12 +339,15 @@
   .layout {
     .nav {
       &-inner {
-        .nav-items {
-          display: none;
+        .nav-btn {
+          &:hover {
+            .line {
+              background: $white;
+            }
+          }
         }
       }
     }
-
     .footer {
       &-inner {
         grid-template-columns: repeat(2, 1fr);
