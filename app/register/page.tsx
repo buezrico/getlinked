@@ -5,8 +5,11 @@ import { Bounce, Slide } from "react-awesome-reveal";
 import register_img from "@/public/assets/images/register_img.png";
 import girl_walk from "@/public/assets/images/girl_walk.png";
 import guy_walk from "@/public/assets/images/guy_walk.png";
+import Success from "@/components/modals/Success";
+import { useState } from "react";
 
 export default function Home() {
+  const [success, setSuccess] = useState(false);
   const router = useRouter();
   return (
     <div className="register">
@@ -108,7 +111,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="register-form-button">
+                <div
+                  className="register-form-button"
+                  onClick={() => setSuccess(true)}
+                >
                   <button className="btn-primary">
                     <div className="btn-primary-inner">Submit</div>
                   </button>
@@ -118,6 +124,8 @@ export default function Home() {
           </Bounce>
         </div>
       </div>
+
+      {success && <Success />}
     </div>
   );
 }
